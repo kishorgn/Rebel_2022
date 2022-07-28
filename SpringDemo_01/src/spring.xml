@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="p1" class="com.rebel.beans.Person">
+<!--     <constructor-arg index="0" value="111"/> -->
+<!--     <constructor-arg index="1" value="Mahesh"/> -->
+<!--     <constructor-arg index="2" value="mahesh@tollywood.com"/> -->
+<!--     <constructor-arg index="3" ref="a1"></constructor-arg> -->
+    
+    	<property name="id" value="101"/>
+    	<property name="name" value="Rajesh"/>
+    	<property name="email" value="rajesh@hotmail.com"/>
+    	<property name="address" ref="a1"></property>
+    </bean>
+    
+    <bean id="a1" class="com.rebel.beans.Address">
+    	<property name="city" value="Mumbai"/>
+    	<property name="state" value="Maharastra"/>
+    </bean>
+
+</beans>
