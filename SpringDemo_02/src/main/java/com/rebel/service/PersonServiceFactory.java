@@ -1,20 +1,24 @@
 package com.rebel.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class PersonServiceFactory {
-	private PersonServiceFactory() {
-		
+	
+	PersonService personService;
+
+	public PersonService getPersonService() {
+		return personService;
+	}
+
+	@Autowired
+	public void setPersonService(PersonService personService) {
+		this.personService = personService;
 	}
 	
-	static PersonService personService = null;
-	
-	public static PersonService getPersonService() {
-		if(personService == null) {
-			personService = new PersonServiceFsImpl();
-			return personService;
-		}
-		else {
-			return personService;
-		}
+	public void finalize() {
+		System.out.println("Person Service Factory destroyed");
 	}
 
 }
