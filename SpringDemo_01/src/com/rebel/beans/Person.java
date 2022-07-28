@@ -1,23 +1,33 @@
 package com.rebel.beans;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person {
+	@Value("101")
 	int id;
+	
+	@Value("Kamal")
 	String name;
+	
+	@Value("kamal@tamilwood.com")
 	String email;
-	Address address;
+	
+	
 	public Person() {
 		super();
 		// TODO Auto-generated constructor stub
 		System.out.println("No-args construcotr");
 	}
-	public Person(int id, String name, String email, Address address) {
+	
+	public Person(int id, String name, String email) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.address = address;
-		System.out.println("Parameter constructor");
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -36,15 +46,12 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + "]";
+		return "Person [id=" + id + ", name=" + name + ", email=" + email + "]";
 	}
+	
+	
 	
 }
