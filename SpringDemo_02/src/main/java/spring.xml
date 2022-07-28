@@ -10,7 +10,11 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.rebel"/>
     
-    <bean id="personSrevice" class="com.rebel.service.PersonServiceFsImpl">
+    <bean id="personService" class="com.rebel.service.PersonServiceFsImpl">
+    </bean>
+    
+    <bean id="personServiceFactory" class="com.rebel.service.PersonServiceFactory">
+    	<property name="personService" ref="personService"></property>
     </bean>
     
 </beans>
